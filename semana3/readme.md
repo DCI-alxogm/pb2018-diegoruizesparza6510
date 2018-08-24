@@ -10,5 +10,5 @@ vocalmayusculaomin.c :indica si es vocal o minuscula
 
 numeroparoimpar.c :indica si 2 numeros son parees o impares
 
-programacombinado.c :programa que convina el de temperaturas con el de coordenadas pero las coordenas que convierte son de cartesianas a polares
+programacombinado.c :programa que combina el de temperaturas con el de coordenadas pero las coordenas que convierte son de cartesianas a polares
 
