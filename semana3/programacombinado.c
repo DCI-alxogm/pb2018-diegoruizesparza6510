@@ -21,6 +21,14 @@ r=sqrt((pow(d,2))+(pow(y,2)));
 y=(180/3.1416)*y;
 d=(180/3.1416)*d;
 a=atan(y/d);
+if(d>=0 && y>=0)
+{a=a;}
+else if(d<0 && y>=0)
+{a=a+90;}
+else if(d<0 && y<0)
+{a=a+180;}
+else if(d>=0 && y<0)
+{a=a+240;}
 d=(3.1416/180)*d;
 y=(3.1416/180)*y;
 printf("el valor de tu 1er coordenada r es:%f\n",r);
