@@ -1,0 +1,8 @@
+-ejemplo2: ejemplo de practica
+-ejemplo3: ejemplo de practica
+-evaluafunciones: programa que evaluca una variables en sin,cos,exp,log,raiz cuadrada y -muestra los resultados en un intervalo y espaciado dado por el usuario
+-factorial: calcula el factorial de un numero
+-primos: ejercicio de numeros primos, maximo 100 numeros
+-binario:convierte a numeros decimales binarios y binarios a decimales
+-programa1forwhile:programa de las temperaturas con opcion de seguir ejecutandolo
+-archivos pdf: diagramas de flujo de los programas
