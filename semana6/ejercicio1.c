@@ -14,16 +14,19 @@ for (i=0;i<h;i++)
 {
 printf("dime cuantos alumnos hay en cada semestre, empezando por el 1ro hasta el noveno\n");
 scanf("%i",&semestre[h]);
+printf("alumnos en cada semestre:%i \n",semestre[h]);
 }
 for (i=0;i<p;i++)
 {
 printf("el promedio de los 10 alumnos\n");
 scanf("%f",&promedio[p]);
-}
 z=promedio[p]/10;
+}
+for (i=0;i<p;i++);
+{
+printf("el promedio de los alumnos es: %f \n",z);
+}
 printf("alumnos: %i \n",m);
 printf("alumnas: %i \n",f);
-printf("alumnos en cada semestre:%i \n",semestre[h]);
-printf("el promedio de los alumnos es: %f \n",z);
 return 0;
 }
