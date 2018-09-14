@@ -1,32 +1,73 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-int i,m,f,n=10,o,h=9,p=10,semestre[h];
-float z,alumnos[n],promedio[p];
-
-printf("este programa solicita, sexo, semestre y promedio de 10 alumnos \n");
-printf("despues te dice cuantos son hombres y cuantos mujeres, en que semestre van y el promedio de sus calificaciones \n");
-printf("dime cuantos alumnos son hombres\n");
-scanf("%i",&m);
-printf("dime cuantos alumnos son mujeres\n");
-scanf("%i",&f);
-for (i=0;i<h;i++)
+int N,i;
+char a,t=0;
+float temp,edad[N],sexo[N],sem[N],cali[N],semestre[9],h=0,m=0,p=0,edadsem[9],promedad=0,c[9];
+printf("Introduce el número de alumnos:\n");
+scanf("%i", &N);
+for(int i=0 ; i<9 ; i++)
 {
-printf("dime cuantos alumnos hay en cada semestre, empezando por el 1ro hasta el noveno\n");
-scanf("%i",&semestre[h]);
-printf("alumnos en cada semestre:%i \n",semestre[h]);
+semestre[i]=0;
+edadsem[i]=0;
+c[i]=0;
 }
-for (i=0;i<p;i++)
+printf("A continuación, introduzca %i lineas de datos siguiendo:\n", N);
+printf("Edad,Sexo(H-M),Semestre,promedio\n");
+for(int i=0 ; i<N ; i++){
+scanf("%f %c %f %f", &edad[i], &a, &sem[i], &cali[i]);
+if(a=='h')
 {
-printf("el promedio de los 10 alumnos\n");
-scanf("%f",&promedio[p]);
-z=promedio[p]/10;
+sexo[i]=0;
+h++;
 }
-for (i=0;i<p;i++);
+else
 {
-printf("el promedio de los alumnos es: %f \n",z);
+sexo[i]=1;
+m++;
 }
-printf("alumnos: %i \n",m);
-printf("alumnas: %i \n",f);
+t = sem[i]-1;
+edadsem[t]+=edad[i];
+promedad+=edad[i];
+c[t]+=cali[i];
+p+=cali[i];
+semestre[t]++;
+}
+printf("Total de estudiantes: %i , De los cuales %0.0f son mujeres y %0.0f son hombres\n", N, m, h);
+printf("Estudiantes por semestre:\n");
+for(int i=0 ; i<8 ; i++)
+{
+printf("Semestre %i°    %0.0f \n", i+1, semestre[i]);
+}
+temp = p/N;
+printf("Promedio de calificaciones: %0.2f \n", temp);
+printf("Promedio de calificaciones por semestre:\n");
+for(int i=0 ; i<8 ; i++)
+{
+if(semestre[i]!=0)
+{
+temp= c[i]/semestre[i];
+}
+else
+{
+temp=0;
+}
+printf("\n Semestre %i°  %0.2f", i+1, temp);
+}
+temp = promedad/N;
+printf("\n Promedio de edad: %0.2f \n", temp);
+printf("\n Promedio de edad por semestre: \n");
+for(int i=0 ; i<8 ; i++)
+{
+if(semestre[i]!=0)
+{
+temp = edadsem[i]/semestre[i];
+}
+else
+{
+temp=0;
+}
+printf("Semestre %i°    %0.2f \n", i+1, temp);
+}
 return 0;
 }
