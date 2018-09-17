@@ -1,0 +1,5 @@
+valor para la potencia
+limite inferior
+limite superior
+veces que se realizara
+número de trapecios
