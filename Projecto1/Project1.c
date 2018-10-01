@@ -5,7 +5,7 @@
 int main(){
 //declaracion de variables
 float G=39.47841,h;
-int n=1000,i,o;
+int n=10000,i,o;
 double a,b,c,d,e,f;
 double x[n],y[n],z[n],vx[n],vy[n],vz[n],r;
 FILE *planeta;
@@ -32,14 +32,14 @@ if(o==0)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadosmercurio.txt","w"); //se abre el archivo donde se van a guardar los resultados
-		for(i=1;i<1000;i++) //se van a hacer 1000 calculos ya que nuestro paso es de 0.001 y el valor de nuestro año es 1
+		for(i=1;i<=10000;i++) //se van a hacer 1000 calculos ya que nuestro paso es de 0.001 y el valor de nuestro año es 1
 	{
 	  //se calcula el radio con los valores de x,y,z de cada planeta, en este caso los de mercurio
 	    //se realizan operaciones, se pone i-1 porque tenemos que empezar con los valores iniciados dados en nuestros archivos de texto de los planetas
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	//se calcula el radio cada que cambia x,y,z     
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	//se calcula el radio cada que cambia x,y,z     
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
@@ -63,12 +63,12 @@ if(o==1)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadosvenus.txt","w"); 
-		for(i=1;i<1000;i++) 
+		for(i=1;i<=10000;i++) 
 	{     	  
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	  
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	  
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
@@ -89,12 +89,12 @@ if(o==2)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadostierra.txt","w"); 
-		for(i=1;i<1000;i++) 
+		for(i=1;i<=10000;i++) 
 	{	     	   
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	 
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	 
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
@@ -117,12 +117,12 @@ if(o==3)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadosmarte.txt","w"); 
-		for(i=1;i<1000;i++) 
+		for(i=1;i<=10000;i++) 
 	{	      	   
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	  
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	  
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
@@ -145,12 +145,12 @@ if(o==4)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadosjupiter.txt","w"); 
-		for(i=1;i<1000;i++) 
+		for(i=1;i<=10000;i++) 
 	{	      	   
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	  
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	  
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
@@ -173,12 +173,12 @@ if(o==5)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadossaturno.txt","w"); 
-		for(i=1;i<1000;i++) 
+		for(i=1;i<=10000;i++) 
 	{	      	   
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	  
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	  
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
@@ -201,12 +201,12 @@ if(o==6)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadosurano.txt","w"); 
-		for(i=1;i<1000;i++) 
+		for(i=1;i<=10000;i++) 
 	{	      	   
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	  
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	  
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
@@ -229,12 +229,12 @@ if(o==7)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadosneptuno.txt","w"); 
-		for(i=1;i<1000;i++) 
+		for(i=1;i<=10000;i++) 
 	{	      	   
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	  
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	  
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
@@ -257,12 +257,12 @@ if(o==8)
 	vy[0]=e;
 	vz[0]=f;
 	resultados=fopen("resultadospluton.txt","w"); 
-		for(i=1;i<1000;i++) 
+		for(i=1;i<=10000;i++) 
 	{	      	   
 	    x[i]=x[i-1]+vx[i-1]*h; 
 	    y[i]=y[i-1]+vy[i-1]*h;
 	    z[i]=z[i-1]+vz[i-1]*h;
-  	    r=sqrt(pow(x[i],2)+pow(y[i],2)+pow(z[i],2));	  
+  	    r=sqrt(pow(x[i-1],2)+pow(y[i-1],2)+pow(z[i-1],2));	  
 	    vx[i]=vx[i-1]-h*((G*x[i-1])/pow(r,3));
 	    vy[i]=vy[i-1]-h*((G*y[i-1])/pow(r,3));
 	    vz[i]=vz[i-1]-h*((G*z[i-1])/pow(r,3));
