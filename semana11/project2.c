@@ -1,55 +1,71 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
+void projecto(float e, float x)
 
-void projecto();
-void initialize(int n,float izq, float arri, float der, float aba, float **T);
-
-void projecto()
 {
-
-	float e,a;
-	int i,j,N,n=0;
-	float izq,arri,der,aba;
+	float ,ee=1;
+	int n,i,j;
+	float a,d,w,s,o,t;
+	FILE *fp,*resultados,*in;
 	
-	FILES *archivo1,*fp;
-	//leer del archivo la temperatura de los bordes,numero de puntos a usar en la aproximación,
-	archivo1=fopen("datos.txt","r");
-	fscanf(" %i %f %f %f %f %f ",&n,&izq,&arri,&der,&aba,&e);
-	fclose(archivo1);
-	double **T= (double**)malloc(n*sizeof(double));
-	for(i=0;i<n;i++){
-	T[i]=(double*)malloc(n*sizeof(double));
-	}
-	N=n*n;
-	initialize(n,izq,arri,der,aba,T);
-	fp=fopen("resultados.txt","w");
-	for(i=0;i<N;i++)
-	{
-	while(a<e)
-	{
-	T[i][j]=(((T[i+1],[j])+(T[i-1],[j])+(T[i],[j+1])+(T[i],[j-1]))/4);
-	a=(Txy[i]-Txy[i-1])/Txy[i-1];
-	fprintf(" %f %f %f",x[i],y[i],Txy[i]);
-	}
-	}
+
+	fp=fopen("datos.txt","r");
+	fscanf(fp,"%f %f %f %f %f %i",&a,&d,&w,&s);
 	fclose(fp);
+	n=x*x;
+	double **T = (double**)malloc(x*sizeof(int*));
+
+	in=fopen("inicio.txt","w");
+	for(i=1;i<=x;i++)
+{
+			for(j=1;j<=x;j++)
+{
+		if(i=1)
+		T[i][j]=a;
+		else if(i=n)
+		T[i][j]=d;
+		else if(j=1)
+		T[i][j]=w;
+		else if(j=n)
+		T[i][j]=s;
+		else
+		T[i][j]=0;
+		fprintf(in,"%lf",T[i][j]);
+}
+		fprintf(in,"\n");
+}
+	fclose(in);	
+	while(ee>=e)
+{	
+		sprintf(num,"%i.ods",x);
+		resultados=fopen("resultados.txt","w");
+}
+	for(i=1;i<=x-1;i++)
+{
+			for(j=1;j<=x-1;j++)
+{ 
+	o=T[i][j];		
+	T[i][j]=((T[i+1][j]+T[i-1][j]+T[i][j+1]+T[i][j-1])/4);
+	t=(T[i][j]-o)/o;
+	if(abs(t)<ee)
+{
+	ee=t;
+}		
+}	
+}
+	for(i=1;i<=x-1;i++)
+{
+        for(j=1;j<=x-1;j++)
+{
+	fprintf(resultados,"%f",T[i][j]);
+}
+}
+	fclose(resultados);
 	free(T);
 }
 
-void initialize(int n,float izq, float arri, float der, float aba, float **T)
-{
-int i,j;
-for(i=0;i<n;i++)
-		for(j=0;j<n;j++){
-		if(i=0)
-		T[i][j] = izq;
-		else if(j=0)
-		T[i][j] = arri;
-		else if(i=n)
-		T[i][j] = der;
-		else if(j=n)
-		T[i][j] = aba;
-		else 
-		T[i][j] = 0;
-	}
-}
+
+
+
+

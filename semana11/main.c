@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-void projecto()
+#include<math.h>
+void projecto();
 int main()
 {
 projecto();
