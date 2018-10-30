@@ -1,0 +1,14 @@
+Universidad de Guanajuato
+División de ciencias e Ingenierias
+Programación básica
+Diego Ruiz Esparza Flores
+2do Proyecto parcial "Temperatura de una placa"
+
+Reporte de resultados:
+El programa se creo para poder trabajar solo con 11 iteraciones, aunque esto se puede modificar para poder hacer mas iteraciones y por ende mas archivos de resultados.
+Tambien se creo para poder tener cualquier temperatura de entrada, asi como cualquier numero de puntos en "x" y "y"
+La temperatura en los bordes se mantuvo constante en cada iteración y fue aumentando en cada iteración, comprobando asi que se llega a un equilibrio térmico en la placa
+
+
+
+
