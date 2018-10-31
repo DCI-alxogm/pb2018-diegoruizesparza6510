@@ -10,3 +10,5 @@ Los archivos de la forma "numeroiteración" muestran las temperaturas en los dif
 Los archivos con terminación .png muestran las graficas de como va cambiando la tempreatura en cada iteración
 
 El archivo datos.txt tiene los valores inciales de temperatura para cada borde y el numero de puntos por borde
+
+El archivo diagrama de flujo.jpeg muestra el diagrama de flujo basico hecho a mano
