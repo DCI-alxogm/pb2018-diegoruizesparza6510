@@ -1,7 +1,9 @@
 #include "holamake.h"
-
+#include <stdio.h>
 int main()
 {
-holamake();
+int z;
+printholamake();
+cuadrado();
 return 0;
 }
